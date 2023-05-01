@@ -1,0 +1,65 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Equipo{% endblock %}
+
+
+
+    
+
+{% block content %}
+
+
+<section class="cards-container">
+    {% for service in services  %}
+    <div class="card-item">
+        <div class="card">
+            <div class="card-header">
+                <img  src="{{service.image.url}}" height="auto" width="auto" alt="">
+            </div>
+            <div class="card-body">
+                <p class="text-primary">{{service.title}}</p> 
+                <p class="text-primary"> {{service.subtitle}}</p><br/>
+            </div>
+            <footer class="footeruser text-faded text-center py-5">
+                <div class="container">
+                  <p class="m-0">
+                    {% if service.url1 %}
+                      <a href="{{service.url1}}" class="link2">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    {% endif %}
+                    {% if service.url2 %}
+                      <a href="{{LINK_FACEBOOK}}" class="link2">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    {% endif %}
+                    {% if service.url3%}
+                      <a href="{{service.url3}}" class="link2">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    {% endif %}
+                   
+                  </p>
+              
+              </footer>
+              
+            
+               
+            
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}
